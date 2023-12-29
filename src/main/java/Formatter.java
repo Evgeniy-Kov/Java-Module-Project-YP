@@ -1,5 +1,5 @@
 public class Formatter {
-    public  static String getCorrectCaseOfRuble(int number) {
+    public static String getCorrectCaseOfRuble(int number) {
         String result = "";
         int beforeLastDigit = number % 100 / 10;
         if (beforeLastDigit == 1) {

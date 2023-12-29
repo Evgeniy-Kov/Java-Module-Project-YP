@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class ProductInputParser {
@@ -49,7 +50,8 @@ public class ProductInputParser {
             printErrorMessage();
             return false;
         }
-        int priceScale = price.substring(price.lastIndexOf('.') + 1).length();
+        BigDecimal priceBD = new BigDecimal(price);
+        int priceScale = priceBD.scale();
         if (priceScale > 2) {
             printErrorMessage();
             return false;
@@ -61,7 +63,7 @@ public class ProductInputParser {
     private boolean addAnotherProductQuestion() {
         Scanner scn = new Scanner(System.in);
         System.out.println("Вы хотите добавить еще один товар?\n" +
-                "Для рассчета стоимости введите команду \"Завершить\"");
+                "Для расчета стоимости введите команду \"Завершить\"");
         String answer = scn.nextLine().trim();
         String finishWord = "Завершить";
         return !answer.equalsIgnoreCase(finishWord);

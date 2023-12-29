@@ -23,6 +23,7 @@ public class IntegerParser {
         }
         return numberOfPerson;
     }
+
     void printErrorMessage() {
         System.out.println("Вы ввели неверное значение.\nКоличество гостей должно быть больше 1" +
                 " и меньше 2147483648");

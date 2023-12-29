@@ -26,7 +26,7 @@ public class Calculator {
 
         System.out.println(String.format("Каждый гость должен заплатить: %.2f %s",
                 costPerGuest,
-                Formatter.getCorrectCaseOfRuble((int) this.totalCost)));
+                Formatter.getCorrectCaseOfRuble((int) costPerGuest)));
     }
 
     private void printProductList() {
@@ -35,6 +35,7 @@ public class Calculator {
             printProduct(productList.get(i));
         }
     }
+
     private void printProduct(Product product) {
         String template = "%s %.2f %s";
         System.out.println(String.format(template, product.getName(), product.getPrice(),
